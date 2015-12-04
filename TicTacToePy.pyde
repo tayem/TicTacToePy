@@ -14,7 +14,7 @@ class square:
         self.filled = True;
         self.fillType = 1;
         fillCount += 1;
-    def FillY(self):
+    def FillO(self):
         global fillCount;
         self.filled = True;
         self.fillType = 2;

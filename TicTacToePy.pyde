@@ -20,7 +20,9 @@ class square:
         self.fillType = 2;
         fillCount += 1;
     def Draw(self):
-        rect(self.sX, self.sY, self.sWidth, self.sHeight);
+        if fillType == 0:
+            rect(self.sX, self.sY, self.sWidth, self.sHeight);
+         
 def setup():
     size(900, 900);
     smooth();

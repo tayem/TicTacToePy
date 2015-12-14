@@ -76,22 +76,31 @@ def mouseClicked():
                 player = 1;
             squareList[i].Draw();
         i+=1;
-    if winDetection() == 1:
-        rectMode(CENTER);
-        fill(3,55,255);
-        stroke(0,0,0);
-        rect(450,450,800,800);
-        fill(255,255,255);
-        textSize(80);
-        text("Player 1 Wins!", 200,450);
-    elif winDetection() == 2:
-        rectMode(CENTER);
-        fill(255,31,31);
-        stroke(0,0,0);
-        rect(450,450,800,800);
-        fill(255,255,255);
-        textSize(80);
-        text("Player 2 Wins!", 200,450);
+    if fillCount >= 5:
+        if winDetection() == 1:
+            rectMode(CENTER);
+            fill(3,55,255);
+            stroke(0,0,0);
+            rect(450,450,800,800);
+            fill(255,255,255);
+            textSize(80);
+            text("Player 1 Wins!", 200,450);
+        elif winDetection() == 2:
+            rectMode(CENTER);
+            fill(255,31,31);
+            stroke(0,0,0);
+            rect(450,450,800,800);
+            fill(255,255,255);
+            textSize(80);
+            text("Player 2 Wins!", 200,450);
+    if fillCount == 9 and winDetection() == 3:
+            rectMode(CENTER);
+            fill(0,0,0);
+            stroke(0,0,0);
+            rect(450,450,800,800);
+            fill(255,255,255);
+            textSize(80);
+            text("Nobody Wins :(", 170,450);
 def winDetection():
     global squareList;
     if squareList[0].fillType == squareList[1].fillType and squareList[0].fillType == squareList[2].fillType:
@@ -139,3 +148,5 @@ def winDetection():
             return 1;
         elif squareList[2].fillType == 2:
             return 2;
+    else:
+        return 3;

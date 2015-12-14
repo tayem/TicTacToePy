@@ -1,5 +1,4 @@
 player = 1;
-win = 0;
 fillCount  = 0;
 squareList = [];
 class square:
@@ -56,7 +55,6 @@ def setup():
             xLoc = 0;
 def draw():
     return None;
-
 def mouseClicked():
     global player;
     global fillCount;
